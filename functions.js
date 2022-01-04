@@ -1,19 +1,3 @@
-function extractValuesForKey(object,searchKey){
-    let resultMap=new Map()
-    function checkDeep(obj,path){
-        for(var key in obj){
-            if(key===searchKey){
-                resultMap.set(path,obj[key])
-            }
-            if(typeof obj[key] === "object") {
-                let newPath=path ? path+"/"+key:key
-                checkDeep(obj[key], newPath);
-            }
-        }
-    }
-    checkDeep(object,path="")
-    return resultMap
-}
 function sum(initialParameter) {
     let total = 0;  
     function validator (arg) {
